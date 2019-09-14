@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Alumnos Registrados</title>
+</head>
+<body>
+<h1>La bola se fue a la chingada!!!</h1>
+
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Apellido Paterno</th>
+<th>Apellido Materno</th>
+<th>Edad</th>
+<th>Correo</th>
+</tr>
+</thead>
+
+<tbody>
+<tr th:each="alumno : ${alumnos}">
+<td th:text="${alumno.nombre}"></td>
+<td th:text="${alumno.apellidoPaterno}"></td>
+<td th:text="${alumno.apellidoMaterno}"></td>
+<td th:text="${alumno.edad}"></td>
+<td th:text="${alumno.correo}"></td>
+<td><a href="#" th:href="@{/alumnos/registraralumnosform?id=__${alumno.id}__}">
+<button type="button" ><span >Modificar</span></button>
+</a>
+<a href="#" th:href="@{/alumnos/removedAlumno?id=__${alumno.id}__}">
+<button type="button" ><span>Eliminar</span></button>
+</a></td>
+</tr>
+</tbody>
+</table>
+
+<a href="#" th:href="@{/alumnos/registraralumnosform?id=0}">
+<button  type="submit"><span ></span> Add Alumno</button>
+</a>
+</body>
+</html>

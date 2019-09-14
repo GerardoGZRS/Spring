@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script type="text/javascript" language="javascript" src="https://www.technicalkeeda.com/js/javascripts/plugin/jquery.js"></script>
+   <script type="text/javascript" src="https://www.technicalkeeda.com/js/javascripts/plugin/json2.js"></script>
+   <script src="/wp-content/uploads/tutorial-data/http://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.js"></script>
+	<script src="/wp-content/uploads/tutorial-data/http://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular-resource.js"></script>
+	<script src="/wp-content/uploads/tutorial-data/./js/services.js"></script>
+</head>
+<body>
+<form action="#" th:action="@{/alumnos/addAlumno}" th:object="${alumnoModel}" method="post">
+    <input type="hidden" th:field="*{id}" />
+<span>Nombre <input type="text" placeholder="Ingresa tu nombre" th:field="*{nombre}" th:value="${nombre}"/></span>
+<br />
+<br />
+<span>Apellido Paterno: <input type="text" placeholder="Ingresa tu apellido Paterno" th:field="*{apellidoPaterno}" th:value="${apellidoPaterno}"/></span>
+<br />
+<br />
+<span>Apellido Materno: <input  type="text" placeholder="Ingresa tu apellido Materno" th:field="*{apellidoMaterno}" th:value="${apeliidoMaterno}"/></span>
+<br />
+<br />
+<span>Edad: <input type="text" placeholder="Ingresa tu edad" th:field="*{edad}" th:value="${edad}"/></span>
+<br />
+<br />
+<span>Correo Electronico: <input type="text" placeholder="example@domain.com" th:field="*{correo}" th:value="${correo}"/></span>
+<br />
+<br />
+<button type="submit">
+					<span></span> Accept
+				</button>
+</form>
+</body>
+</html>

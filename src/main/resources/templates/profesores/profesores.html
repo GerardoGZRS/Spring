@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    
+        </head>
+    <body>
+      <div ng-app="myApp" ng-controller="myCtrl">
+                <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Telephone</th>
+                <th>City</th>
+            </tr>
+ 
+            <tr ng-repeat="employee in content">
+                <td>{{ employee.firstname }}</td>
+                <td>{{ employee.lastname }}</td>
+                <td>{{ employee.telephone }}</td>
+                <td><a href="#" ng-click="idContacto( employee )">Rest Request!!</a> | <a ng-click="removeEmployee( employee )" class="button">Remove</a></td>
+            </tr>
+        </table>
+
+          <form >
+    First Name: <input type="text" ng-model="content.id" /><br/>
+Last Name: <input type="text" ng-model="content.firstname" /><br/>
+<br/>
+<h1>{{content}}</h1>
+
+    <button ng-click="enviar()">Enviar</button>
+</form>
+          
+          <form>
+              First Name: <input type="text" ng-model="contacto.firstname"></input>
+				<br/>
+                                			<input type="hidden" ng-model="contacto.id"></input>
+
+                                Last Name: <input type="text" ng-model="contacto.lastname"></input>
+				<br/>
+                                Telephone: <input type="text" ng-model="contacto.telephone"></input>
+				<br/>
+                                City: <input type="text" ng-model="contacto.city"></input>
+				<br/>
+				<br/>
+                                <button  ng-click="save()">
+					Guardar
+				</button>
+          </form>
+
+</div>
+        <a href="#" th:href="@{/profesores/checkrest}">Rest Request!!</a>
+        <a href="#" th:href="@{/profesores/idContacto}">Rest Request!!</a>
+
+    </body>
+            <script type="text/javascript" src="#" th:src="@{/js/profesores.js}"/>
+</html>
